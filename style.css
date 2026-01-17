@@ -1391,7 +1391,24 @@ footer {
     /* 2x2 Stats Grid */
     .stats-grid,
     .trust-logos {
+        display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 15px !important;
+    }
+
+    /* FORCE MENU TOGGLE VISIBILITY */
+    .menu-toggle {
+        display: block !important;
+        position: absolute !important;
+        right: 24px !important;
+        top: 22px !important;
+        font-size: 2rem !important;
+        color: #3f63ad !important;
+        z-index: 10001 !important;
+        width: 40px !important;
+        height: 40px !important;
+        background: transparent !important;
+        padding: 0 !important;
+        line-height: 1 !important;
     }
 }
