@@ -1255,17 +1255,30 @@ footer {
        FINAL MOBILE FIXES (Padding, Footer Grid, Portfolio Header)
        ========================================= */
 
-    /* 1. Global Padding Reduction */
+    /* 1. Smart Padding Strategy */
+    /* General Sections (Middle of page) - Keep compact */
     .section,
-    .page-padding-top,
     section {
         padding-top: 40px !important;
         padding-bottom: 40px !important;
     }
 
+    /* FIRST SECTION ONLY (Must Clear Header) */
+    /* Targeting all variations of Hero/Top sections */
+    .hero-section,
+    .page-padding-top,
+    .portfolio-hero-section,
+    .project-hero,
+    main>section:first-child,
+    body>section:nth-of-type(2) {
+        /* Fallback for some structures */
+        padding-top: 120px !important;
+        /* Header is ~80px + 40px Space */
+    }
+
     .container {
-        padding-left: 15px !important;
-        padding-right: 15px !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
     }
 
     /* 2. Portfolio Header Simplified (Remove Animation/Image, Simple Text) */
