@@ -1211,4 +1211,53 @@ footer {
         justify-content: center;
         gap: 15px !important;
     }
+
+    /* =========================================
+       NEW: Fixes for Grid & Footer (User Request)
+       ========================================= */
+
+    /* 1. 2x2 Grid for Stats (Instead of 1 column) */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+    }
+
+    /* 2. Shrink Footer */
+    footer {
+        padding: 30px 0 !important;
+    }
+
+    .footer-content {
+        gap: 20px !important;
+    }
+
+    .footer-heading {
+        margin-bottom: 15px !important;
+    }
+
+    /* 3. Portfolio Mobile Mixed Content Fix */
+    /* Ensure hero content doesn't overlap/touch edges */
+    .hero-container,
+    .project-hero {
+        padding-top: 20px !important;
+        /* Add space from header */
+        padding-bottom: 40px !important;
+    }
+
+    .hero-visual img,
+    .profile-img-hero {
+        margin-bottom: 20px;
+        /* Space between img and text */
+        max-width: 80% !important;
+        /* Don't be too huge */
+    }
+
+    /* 4. Contact Menu Z-Index Fix */
+    header {
+        z-index: 10000 !important;
+    }
+
+    .nav-links {
+        z-index: 9999 !important;
+    }
 }
