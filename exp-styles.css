@@ -1,0 +1,250 @@
+/* Experience Cards with Scroll Animation */
+.experience-timeline {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.exp-card {
+    background: white;
+    border-radius: 20px;
+    padding: 0;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 20px rgba(1, 0, 128, 0.08);
+    border: 2px solid rgba(1, 0, 128, 0.1);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+    transform: translateY(60px);
+    position: relative;
+    overflow: hidden;
+}
+
+.exp-card.scroll-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.exp-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), #0047AB);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s ease;
+}
+
+.exp-card.scroll-visible::before {
+    transform: scaleX(1);
+}
+
+.exp-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(1, 0, 128, 0.15);
+    border-color: var(--primary-color);
+}
+
+/* Hover Tooltip */
+.exp-card:hover::after {
+    content: '👆 Click to view full description';
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+    animation: tooltipBounce 0.4s ease-out;
+    z-index: 10;
+    box-shadow: 0 6px 20px rgba(1, 0, 128, 0.3);
+}
+
+@keyframes tooltipBounce {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.exp-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+    cursor: pointer;
+    background: linear-gradient(135deg, rgba(248, 249, 255, 0.8), rgba(255, 255, 255, 0.8));
+    border-radius: 20px 20px 0 0;
+    transition: background 0.3s ease;
+}
+
+.exp-header:hover {
+    background: linear-gradient(135deg, rgba(240, 242, 255, 1), rgba(255, 255, 255, 1));
+}
+
+.exp-icon {
+    font-size: 3rem;
+    min-width: 60px;
+    text-align: center;
+    animation: floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.exp-meta {
+    flex: 1;
+}
+
+.exp-meta h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.exp-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin: 5px 0;
+}
+
+.exp-details,
+.exp-date {
+    font-size: 0.95rem;
+    color: #666;
+    margin: 3px 0;
+}
+
+.exp-toggle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.exp-toggle:hover {
+    background: #0047AB;
+    transform: scale(1.1);
+}
+
+.exp-toggle span {
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.exp-toggle.active span {
+    transform: rotate(180deg);
+}
+
+.exp-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding: 0 30px;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.exp-content.active {
+    max-height: 5000px;
+    opacity: 1;
+    padding: 30px;
+}
+
+.exp-content h4 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin: 25px 0 15px;
+    font-weight: 600;
+}
+
+.exp-content ul {
+    margin-left: 20px;
+    line-height: 1.9;
+}
+
+.exp-content li {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.account-block {
+    margin: 20px 0;
+    padding: 20px;
+    background: rgba(248, 249, 255, 0.5);
+    border-radius: 12px;
+    border-left: 4px solid #ccc;
+    transition: all 0.3s ease;
+}
+
+.account-block.primary {
+    border-left-color: var(--primary-color);
+    background: rgba(1, 0, 128, 0.03);
+}
+
+.account-block:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.account-block h5 {
+    color: #333;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.account-desc {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.primary-tag {
+    background: var(--primary-color);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.exp-summary {
+    background: var(--primary-color);
+    color: white;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(1, 0, 128, 0.2);
+}

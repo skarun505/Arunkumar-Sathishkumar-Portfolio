@@ -1,0 +1,68 @@
+/* ============================================
+   CLIENTS SHOWCASE - Infinite Scroll
+   ============================================ */
+.clients-section {
+    padding: 80px 0;
+    background: var(--bg-light);
+    overflow: hidden;
+}
+
+.clients-scroll-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.clients-scroll {
+    display: flex;
+    gap: 80px;
+    animation: scroll-infinite 30s linear infinite;
+    width: max-content;
+}
+
+.clients-scroll:hover {
+    animation-play-state: paused;
+}
+
+.client-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
+    height: 120px;
+    background: white;
+    border-radius: var(--radius-md);
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.client-logo:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.client-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.client-logo:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+@keyframes scroll-infinite {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-50%));
+    }
+}

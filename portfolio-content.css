@@ -1,0 +1,325 @@
+/* =========================================
+   SECTION 3: FEATURED CASE STUDIES
+   ========================================= */
+.case-studies-section {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.section-header-center {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.case-study-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    padding: 20px;
+}
+
+.case-study-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.case-study-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.cs-image-box {
+    height: 250px;
+    background: #e0e0e0;
+    position: relative;
+    overflow: hidden;
+}
+
+.cs-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.case-study-card:hover .cs-image-box img {
+    transform: scale(1.05);
+}
+
+.cs-overlay-tag {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #fff;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #010080;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cs-content {
+    padding: 30px;
+}
+
+.cs-stats-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.cs-stat {
+    flex: 1;
+}
+
+.cs-stat h4 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #010080;
+    margin: 0;
+    line-height: 1;
+}
+
+.cs-stat p {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 5px 0 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cs-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 10px;
+    color: #1a1a1a;
+}
+
+.cs-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.btn-link {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+    color: #010080;
+    text-decoration: none;
+    transition: gap 0.3s ease;
+    gap: 5px;
+}
+
+.btn-link:hover {
+    gap: 10px;
+}
+
+/* =========================================
+   SECTION 4: CREATIVE GALLERY
+   ========================================= */
+.gallery-section {
+    padding: 100px 0;
+    background: #fff;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 250px;
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-item:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.gallery-item:nth-child(2) {
+    grid-column: span 1;
+}
+
+.gallery-item:nth-child(3) {
+    grid-column: span 1;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(1, 0, 128, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: #fff;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+/* =========================================
+   SECTION 5: SERVICES BREAKDOWN
+   ========================================= */
+.services-section {
+    padding: 100px 0;
+    background: #0a0a0a;
+    color: #fff;
+}
+
+.service-card-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.service-card-dark {
+    background: #1a1a1a;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+}
+
+.service-card-dark:hover {
+    border-color: #010080;
+    background: #222;
+    transform: translateY(-5px);
+}
+
+.svc-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.svc-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.svc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.svc-list li {
+    font-size: 0.95rem;
+    color: #aaa;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.svc-list li::before {
+    content: "•";
+    color: #010080;
+    position: absolute;
+    left: 0;
+}
+
+/* =========================================
+   SECTION 6: ABOUT / STORY
+   ========================================= */
+.about-split-section {
+    padding: 100px 0;
+    background: #fff;
+}
+
+.split-container {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-visual {
+    flex: 1;
+    position: relative;
+}
+
+.bio-lead {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 30px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+}
+
+.bio-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.stat-box {
+    background: #f8f9fa;
+    padding: 20px;
+    border-left: 4px solid #010080;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   SECTION 7: CTA
+   ========================================= */
+.cta-banner {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #010080 0%, #000040 100%);
+    text-align: center;
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-item:nth-child(1) {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .split-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+}
