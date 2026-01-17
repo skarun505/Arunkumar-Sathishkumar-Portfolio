@@ -1260,4 +1260,72 @@ footer {
     .nav-links {
         z-index: 9999 !important;
     }
+
+    /* =========================================
+       NEW: Fixes for About Page, Footer, & Overlap (Step 587)
+       ========================================= */
+
+    /* 1. About Page Image Overlap Fix */
+    /* Target the first column (Image) in the About Grid */
+    .page-padding-top .container>div[style*="grid"]>div:first-child,
+    .page-padding-top .container>div[style*="grid"]>div[style*="sticky"] {
+        position: relative !important;
+        /* Stop Sticky on Mobile */
+        top: auto !important;
+        width: 100% !important;
+        max-width: 300px !important;
+        margin: 0 auto 30px auto !important;
+        /* Center Image, Space Below */
+        display: block !important;
+        z-index: 1;
+    }
+
+    /* Ensure Text is below */
+    .page-padding-top .container>div[style*="grid"]>div:last-child {
+        margin-top: 0 !important;
+        z-index: 2;
+    }
+
+    /* 2. Compact Footer (Mobile) */
+    footer {
+        padding: 20px 0 !important;
+        text-align: center;
+    }
+
+    .footer-content {
+        gap: 20px !important;
+        flex-direction: column !important;
+    }
+
+    .footer-heading {
+        font-size: 1rem !important;
+        margin-bottom: 10px !important;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 8px !important;
+        align-items: center;
+    }
+
+    .footer-links a {
+        padding: 5px 0;
+        /* Easier to tap but compact */
+    }
+
+    .social-links {
+        margin-top: 10px !important;
+        justify-content: center !important;
+    }
+
+    /* 3. Portfolio/Hero Content Spacing (Fix "Mixed" Text) */
+    .hero-text-content,
+    .cs-content,
+    .project-card {
+        background: var(--bg-white);
+        /* Ensure background is solid, no see-through */
+        position: relative;
+        z-index: 5;
+    }
 }
